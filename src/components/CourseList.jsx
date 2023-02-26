@@ -1,9 +1,10 @@
 import React from 'react';
 import Course from "./Course"
+import '../Courses.css';
 
 function CourseList(props) {
     return (
-        <div>
+        <div className="course-list">
             {console.log(Object.values(props.courses))}
             { Object.values(props.courses).map(({key, meets, number, term, title}) => <Course key={number} meets={meets} number={number} term={term} title={title}/>) }
         </div>
