@@ -6,7 +6,7 @@ function CourseList(props) {
     return (
         <div className="course-list">
             {console.log(Object.values(props.courses))}
-            { Object.values(props.courses).map(({key, meets, number, term, title}) => <Course key={number} meets={meets} number={number} term={term} title={title}/>) }
+            { Object.values(props.courses).map(({key, meets, number, term, title}) => <Course key={term + number} meets={meets} number={number} term={term} title={title}/>) }
         </div>
     );
 

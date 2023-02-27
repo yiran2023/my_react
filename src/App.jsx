@@ -42,11 +42,15 @@ const Main = () => {
   if (isLoading) return <h1>Loading course data...</h1>;
   if (!data) return <h1>No course data found</h1>;
 
-  return Object.values(data.courses).map(course => <div key={course.term + course.number}>{course.term} {course.meets} {course.title}</div>);
+  return (
+    <div>
+      <Banner title = {data.title}/> 
+      <CourseList courses = {data.courses}/>
+    </div>
+  );
 }
 
 const queryClient = new QueryClient();
-
 
 // const title = schedule.title;
 // const courses = schedule.courses;
@@ -54,9 +58,9 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     // <>
-    //   <Banner 
-    //     title = {schedule.title}
-    //   />
+      // <Banner 
+      //   title = {schedule.title}
+      // />
     //   <CourseList 
     //     courses = {schedule.courses}
     //   />
@@ -65,9 +69,9 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <div className="container">   
         {/* <Banner 
-          title = {schedule.title}
-        />
-        <CourseList 
+          title = {title}
+        /> */}
+        {/* <CourseList 
           courses = {schedule.courses}
         /> */}
         <Main />
