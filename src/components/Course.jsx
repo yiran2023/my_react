@@ -1,9 +1,6 @@
 import React from 'react';
 
 function Course(props) {
-    // return (
-    //     <p>{props.term} CS {props.number}: {props.title}</p>
-    // );
     return (
         <div className="card m-1 p-2">
             {/* <img src={product.thumbnail} className="card-img-top" alt={product.description} /> */}
