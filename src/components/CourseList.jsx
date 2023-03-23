@@ -1,13 +1,12 @@
-import React from 'react';
 import Course from "./Course"
-import '../Courses.css';
+import '../CourseList.css'
 
-function CourseList(props) {
-    return (
-        <div className="course-list">
-            {props.courses.map(({key, meets, number, term, title}) => <Course key={term + number} meets={meets} number={number} term={term} title={title}/>) }
-        </div>
-    );
-}
+const CourseList = (props) => (
+  <div className="course-list">
+    {
+        props.courses.map(({key, meets, number, term, title}) => <Course key={term + number} meets={meets} number={number} term={term} title={title} selected={props.selected} toggleSelected={props.toggleSelected}/>)
+    }
+  </div>
+);
 
 export default CourseList;

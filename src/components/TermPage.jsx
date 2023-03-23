@@ -34,12 +34,20 @@ function TermPage(props) {
         setTerm(winterCourses)
     }
 
+    const [selected, setSelected] = useState([]);
+
+    const toggleSelected = (item) => setSelected(
+      selected.includes(item)
+      ? selected.filter(x => x !== item)
+      : [...selected, item]
+    );
+
     return (
         <div>
             <button onClick={FallCourse}>Fall Course</button>
             <button onClick={SpringCourse}>Spring Course</button>
             <button onClick={WinterCourse}>Winter Course</button> 
-            <CourseList courses = {term}/>
+            <CourseList courses = {term} selected={selected} toggleSelected={toggleSelected}/>
         </div>
     );
 }
