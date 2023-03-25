@@ -5,6 +5,7 @@ const formatPrice = new Intl.NumberFormat([], { style: 'currency', currency: 'US
 const Cart = ({selected}) => (
 
   <div className="cart">
+    {<h1>Hello World!</h1>}
     {
       selected.length === 0
       ? <h2>The cart is empty</h2>

@@ -3,9 +3,8 @@ import CourseList from './CourseList';
 import Modal from './Modal';
 import Cart from './Cart';
 
-function TermPage(props) {
+const TermPage = ({courses}) => {
 
-    const courses = props.courses;
     const fallCourses = [];
     const springCourses = [];
     const winterCourses = [];
@@ -55,7 +54,7 @@ function TermPage(props) {
             <button onClick={FallCourse}>Fall Course</button>
             <button onClick={SpringCourse}>Spring Course</button>
             <button onClick={WinterCourse}>Winter Course</button> 
-            <div class="d-flex justify-content-end">
+            <div className="d-flex justify-content-end">
                 <button className="btn btn-outline-dark" onClick={openModal}><i className="bi bi-cart4"></i></button>
                 <Modal open={open} close={closeModal}>
                     <Cart selected={selected} />
@@ -64,6 +63,6 @@ function TermPage(props) {
             <CourseList courses = {term} selected={selected} toggleSelected={toggleSelected}/>
         </div>
     );
-}
+};
 
 export default TermPage;

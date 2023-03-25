@@ -1,10 +1,10 @@
 import Course from "./Course"
-import '../CourseList.css'
+import './CourseList.css'
 
-const CourseList = (props) => (
+const CourseList = ({courses, selected, toggleSelected}) => (
   <div className="course-list">
     {
-        props.courses.map(({key, meets, number, term, title}) => <Course key={term + number} meets={meets} number={number} term={term} title={title} selected={props.selected} toggleSelected={props.toggleSelected}/>)
+        courses.map(({key, meets, number, term, title}) => <Course key={term + number} meets={meets} number={number} term={term} title={title} selected={selected} toggleSelected={toggleSelected}/>)
     }
   </div>
 );

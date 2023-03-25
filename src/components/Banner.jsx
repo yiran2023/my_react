@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Banner(props) {
-    return <h1>{props.title}</h1>
-}
+const Banner = ({title}) => (
+    <h1>{title}</h1>
+);
 
 export default Banner;
